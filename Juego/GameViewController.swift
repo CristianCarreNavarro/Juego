@@ -19,7 +19,7 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             
             // Present the scene
-            let menuScene = MenuScene()
+            let menuScene = MenuScene(size: CGSize(width: 400, height: 800))
             let transition = SKTransition.flipHorizontal(withDuration: 0.5)
         
            view.presentScene(menuScene)

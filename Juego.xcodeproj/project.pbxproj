@@ -17,6 +17,8 @@
 		3350505F225CEE4200BEC54D /* JuegoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3350505E225CEE4200BEC54D /* JuegoTests.swift */; };
 		3350506A225CEE4200BEC54D /* JuegoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33505069225CEE4200BEC54D /* JuegoUITests.swift */; };
 		33505079225CF3E200BEC54D /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33505078225CF3E200BEC54D /* MenuScene.swift */; };
+		33E35E4A226F5A3900BEA075 /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 33E35E49226F5A3900BEA075 /* Starfield.sks */; };
+		33E35E4C226F61BB00BEA075 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E35E4B226F61BB00BEA075 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		33505069225CEE4200BEC54D /* JuegoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuegoUITests.swift; sourceTree = "<group>"; };
 		3350506B225CEE4200BEC54D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33505078225CF3E200BEC54D /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		33E35E49226F5A3900BEA075 /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Starfield.sks; path = ../../../../Desktop/SpaceGame/SpaceGame/Emitters/Starfield.sks; sourceTree = "<group>"; };
+		33E35E4B226F61BB00BEA075 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../../../../Desktop/SpaceGame/SpaceGame/Emitters/spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 		3350507A225CF91900BEC54D /* Emitters */ = {
 			isa = PBXGroup;
 			children = (
+				33E35E4B226F61BB00BEA075 /* spark.png */,
+				33E35E49226F5A3900BEA075 /* Starfield.sks */,
 			);
 			path = Emitters;
 			sourceTree = "<group>";
@@ -255,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3350504F225CEE4100BEC54D /* Main.storyboard in Resources */,
+				33E35E4C226F61BB00BEA075 /* spark.png in Resources */,
 				33505051225CEE4200BEC54D /* Assets.xcassets in Resources */,
+				33E35E4A226F5A3900BEA075 /* Starfield.sks in Resources */,
 				33505054225CEE4200BEC54D /* LaunchScreen.storyboard in Resources */,
 				33505048225CEE4100BEC54D /* Actions.sks in Resources */,
 			);

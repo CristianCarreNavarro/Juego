@@ -9,13 +9,22 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene,SKPhysicsContactDelegate{
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
+     var starfield : SKEmitterNode!
+     var scoreLabel : SKLabelNode!
+    
+    
     override func didMove(to view: SKView) {
-        
+        // Background starfield
+        starfield = SKEmitterNode(fileNamed: "Starfield")
+        starfield.position = CGPoint(x: 0, y: self.frame.size.height)
+        starfield.advanceSimulationTime(10)
+        self.addChild(starfield)
+        starfield.zPosition = -1
        
         
     }
@@ -39,8 +48,6 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
      
             
-        
-        
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
     
@@ -60,4 +67,5 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
+
 }

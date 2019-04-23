@@ -15,22 +15,38 @@ class MenuScene: SKScene {
     var difficultyButtonNode:SKSpriteNode!
     var difficultyLabelNode:SKLabelNode!
     
+    
     // Initialization
     override func didMove(to view: SKView) {
+        
         // Background starfield
-        starfield = self.childNode(withName: "starfield") as? SKEmitterNode
+        starfield = SKEmitterNode(fileNamed: "Starfield")
+        starfield.position = CGPoint(x: 0, y: self.frame.size.height)
         starfield.advanceSimulationTime(10)
-        // Capture node element references
-        newGameButtonNode = self.childNode(withName: "newGameButton") as? SKSpriteNode
+        self.addChild(starfield)
+        starfield.zPosition = -1
+  
+        starfield = self.childNode(withName: "starfield") as? SKEmitterNode
+        starfield?.advanceSimulationTime(10)
+        
+   
+        newGameButtonNode = SKSpriteNode(texture: SKTexture(imageNamed: "newgame"))
+        newGameButtonNode.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        self.addChild(newGameButtonNode)
+        newGameButtonNode.zPosition = 1
+      
+        
+       // newGameButtonNode = self.childNode(withName: "newGameButton") as? SKSpriteNode
         difficultyButtonNode = self.childNode(withName: "difficultyButton") as? SKSpriteNode
         difficultyLabelNode = self.childNode(withName: "difficultyLabel") as? SKLabelNode
         // Remember the difficulty level from prior execution
         if UserDefaults.standard.bool(forKey: "hard") {
-            difficultyLabelNode.text = "Hard"
+            difficultyLabelNode?.text = "Hard"
         }
         else {
-            difficultyLabelNode.text = "Easy"
+            difficultyLabelNode?.text = "Easy"
         }
+   
     }
     
     // User touches the screen
@@ -74,5 +90,4 @@ class MenuScene: SKScene {
         // Save all changes
         userDefaults.synchronize()
     }
-    
 }
