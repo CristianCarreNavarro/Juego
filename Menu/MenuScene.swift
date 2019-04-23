@@ -35,8 +35,8 @@ class MenuScene: SKScene {
         self.addChild(newGameButtonNode)
         newGameButtonNode.zPosition = 1
       
+        newGameButtonNode.name("newgame")
         
-       // newGameButtonNode = self.childNode(withName: "newGameButton") as? SKSpriteNode
         difficultyButtonNode = self.childNode(withName: "difficultyButton") as? SKSpriteNode
         difficultyLabelNode = self.childNode(withName: "difficultyLabel") as? SKLabelNode
         // Remember the difficulty level from prior execution
@@ -56,7 +56,7 @@ class MenuScene: SKScene {
             let nodesArray = self.nodes(at: location)
             // First node under the finger
             let nodeName = nodesArray.first?.name
-            if nodeName == "newGameButton" {
+            if nodeName == "newgame" {
                 newGame()
             }
             else if nodeName == "difficultyButton" {
@@ -65,17 +65,16 @@ class MenuScene: SKScene {
         }
     }
     
-    // "New Game" button has been touched
+ 
     func newGame() {
-        // Doing this will ignore the GameScene.sks file
         let gameScene = GameScene(size: self.size)
         gameScene.scaleMode = self.scaleMode
-        // Present the game scene with transition
+      
         let transition = SKTransition.flipHorizontal(withDuration: 0.5)
         self.view?.presentScene(gameScene, transition:transition)
     }
     
-    // "Difficulty" button has been touched
+  
     func changeDifficulty() {
         // General userdata storage (settings, ...)
         let userDefaults = UserDefaults.standard
