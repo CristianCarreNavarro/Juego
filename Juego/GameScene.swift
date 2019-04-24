@@ -17,12 +17,14 @@ class GameScene: SKScene,SKPhysicsContactDelegate{
      var starfield : SKEmitterNode!
      var scoreLabel : SKLabelNode!
     
-    
+    //1.57
     override func didMove(to view: SKView) {
         // Background starfield
         starfield = SKEmitterNode(fileNamed: "Starfield")
-        starfield.position = CGPoint(x: 0, y: self.frame.size.height)
+        starfield.position = CGPoint(x: self.frame.maxX, y: 400)
+        starfield.setScale(3)
         starfield.advanceSimulationTime(10)
+        starfield.zRotation = -1.57
         self.addChild(starfield)
         starfield.zPosition = -1
        
